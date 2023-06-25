@@ -1,23 +1,18 @@
 package com.birzeit.currencyconvertertesting;
 
-import com.birzeit.currencyconvertertesting.controller.CurrencyConverterController;
 import com.birzeit.currencyconvertertesting.service.CurrencyConverterService;
 import com.birzeit.currencyconvertertesting.service.ExchangeRateService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class CurrencyConverterTestingApplicationTests {
+class CurrencyConverterTesting {
 
     CurrencyConverterService currencyConverterService = new CurrencyConverterService();
     ExchangeRateService exchangeRateService = new ExchangeRateService();
@@ -60,6 +55,32 @@ class CurrencyConverterTestingApplicationTests {
 
     }
 
+    @Test
+    public void testConversionWithEmptyToCurrency() throws IOException {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            currencyConverterService.convert("USD", "", 200);
+        });
+
+    }
+
+    @Test
+    public void testConversionWithNullFromCurrency() throws IOException {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            currencyConverterService.convert(null, "EUR", 200);
+        });
+
+    }
+
+    @Test
+    public void testConversionWithNullToCurrency() throws IOException {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            currencyConverterService.convert("USD", null, 200);
+        });
+
+    }
 
 
 }
