@@ -9,7 +9,7 @@ public class CurrencyConverterService {
 
     ExchangeRateService exchangeRateService = new ExchangeRateService();
 
-    public double convertCurrency(String fromCurrency, String toCurrency, double amount) throws IOException {
+    public double convert(String fromCurrency, String toCurrency, double amount) throws IOException {
 
         checkInputValidation(fromCurrency, toCurrency, amount);
         checkCurrencies(fromCurrency, toCurrency);
@@ -30,6 +30,8 @@ public class CurrencyConverterService {
         if (exchangeRate < 0) {
             throw new IllegalArgumentException("exchangeRate is negative");
         }
+
+
     }
 
     private void checkCurrencies(String fromCurrency, String toCurrency) {
@@ -37,7 +39,7 @@ public class CurrencyConverterService {
         //Check currency found in database or not
     }
 
-    private void checkInputValidation(String fromCurrency, String toCurrency, double amount) {
+    private void checkInputValidation(String fromCurrency, String toCurrency, Double amount) {
 
         boolean isThereError = false;
 
