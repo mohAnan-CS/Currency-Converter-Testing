@@ -29,12 +29,7 @@ public class ExchangeRateService {
 
     private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/9dc6c9d4fb8fe304a72e221b";
 
-    public static void main(String[] args) throws IOException {
-
-        System.out.println(getExchangeRate("USD", "EUR"));
-    }
-
-    public  static double getExchangeRate(String fromCurrency, String toCurrency ) throws IOException {
+    public double getExchangeRate(String fromCurrency, String toCurrency ) throws IOException {
 
         String url = BASE_URL + "/pair/" + fromCurrency.trim() + "/" + toCurrency.trim();
 
