@@ -13,8 +13,12 @@ public class CurrencyService {
     @Autowired
     private CurrencyRepository currencyRepository;
 
-    public void saveCurrency(Currency currency) {
+    public void save(Currency currency) {
         currencyRepository.save(currency);
+    }
+
+    public void saveAll(List<Currency> currencies) {
+        currencyRepository.saveAll(currencies);
     }
 
     public List<Currency> getAllCurrencies() {

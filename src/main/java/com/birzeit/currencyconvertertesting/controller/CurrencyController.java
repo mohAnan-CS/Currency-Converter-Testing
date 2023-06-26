@@ -1,7 +1,6 @@
 package com.birzeit.currencyconvertertesting.controller;
 
 import com.birzeit.currencyconvertertesting.model.Currency;
-import com.birzeit.currencyconvertertesting.repository.CurrencyRepository;
 import com.birzeit.currencyconvertertesting.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/currencies")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class CurrencyController {
 
     private CurrencyService currencyService;
@@ -23,7 +23,7 @@ public class CurrencyController {
 
     @PostMapping
     public ResponseEntity<String> saveCurrency(@RequestBody Currency currency) {
-        currencyService.saveCurrency(currency);
+        currencyService.save(currency);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
@@ -32,6 +32,5 @@ public class CurrencyController {
         List<Currency> currencies = currencyService.getAllCurrencies();
         return ResponseEntity.status(HttpStatus.OK).body(currencies);
     }
-
 
 }

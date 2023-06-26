@@ -12,7 +12,7 @@ public class Runner {
     public static void main(String[] args) throws IOException {
 
         CurrencyService currencyService = new CurrencyService();
-        currencyService.saveCurrency(new Currency("AED", "UAE Dirham", "United Arab Emirates"));
+        currencyService.save(new Currency("AED", "UAE Dirham", "United Arab Emirates"));
 
     }
 }
