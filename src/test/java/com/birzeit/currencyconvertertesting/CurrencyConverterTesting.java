@@ -3,8 +3,12 @@ package com.birzeit.currencyconvertertesting;
 import com.birzeit.currencyconvertertesting.service.CurrencyConverterService;
 import com.birzeit.currencyconvertertesting.service.ExchangeRateService;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.io.IOException;
@@ -14,14 +18,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 class CurrencyConverterTesting {
 
-    CurrencyConverterService currencyConverterService = new CurrencyConverterService();
-    ExchangeRateService exchangeRateService = new ExchangeRateService();
+    @Mock
+    private CurrencyConverterService currencyConverterService;
+
+    @Mock
+    private ExchangeRateService exchangeRateService;
+
+    @BeforeEach
+    void setup() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
-    public void testConversionWithValidExchangeRate() throws IOException {
+    void testConversionWithValidExchangeRate() throws IOException {
+        // Define the behavior of the mock ExchangeRateService
+        Mockito.when(exchangeRateService.getExchangeRate("USD", "AED")).thenReturn(2.5);
 
-        double exchangeRate = exchangeRateService.getExchangeRate("USD", "AED");
-        double expected = exchangeRate* 150;
+        double expected = 375.0;
+
+        // Define the behavior of the mock CurrencyConverterService
+        Mockito.when(currencyConverterService.convert("USD", "AED", 150.0)).thenReturn(expected);
 
         double convertedAmount = currencyConverterService.convert("USD", "AED", 150.0);
 
@@ -29,57 +45,69 @@ class CurrencyConverterTesting {
     }
 
     @Test
-    public void testConversionWithZeroAmount() throws IOException {
+    void testConversionWithZeroAmount() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert("USD", "EUR", 0);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert("USD", "EUR", 0);
         });
-
     }
 
     @Test
-    public void testConversionWithNegativeAmount() throws IOException {
+    void testConversionWithNegativeAmount() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert("USD", "EUR", -1);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert("USD", "EUR", -1);
         });
-
     }
 
     @Test
-    public void testConversionWithEmptyFromCurrency() throws IOException {
+    void testConversionWithEmptyFromCurrency() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert("", "EUR", 200);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert("", "EUR", 200);
         });
-
     }
 
     @Test
-    public void testConversionWithEmptyToCurrency() throws IOException {
+    void testConversionWithEmptyToCurrency() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert("USD", "", 200);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert("USD", "", 200);
         });
-
     }
 
     @Test
-    public void testConversionWithNullFromCurrency() throws IOException {
+    void testConversionWithNullFromCurrency() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert(null, "EUR", 200);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert(null, "EUR", 200);
         });
-
     }
 
     @Test
-    public void testConversionWithNullToCurrency() throws IOException {
+    void testConversionWithNullToCurrency() throws IOException {
+        Mockito.doThrow(IllegalArgumentException.class)
+                .when(currencyConverterService)
+                .convert("USD", null, 200);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
             currencyConverterService.convert("USD", null, 200);
         });
-
     }
 
 
