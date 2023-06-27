@@ -21,7 +21,13 @@ public class CurrencyConverterService {
 
     }
 
-    private void checkExchangeRate(double exchangeRate) {
+    private void checkCurrencies(String fromCurrency, String toCurrency) {
+
+
+
+    }
+
+    public void checkExchangeRate(double exchangeRate) {
 
         if (exchangeRate == 0) {
             throw new IllegalArgumentException("exchangeRate is zero");
@@ -34,18 +40,10 @@ public class CurrencyConverterService {
 
     }
 
-    private void checkCurrencies(String fromCurrency, String toCurrency) {
-
-        //Check currency found in database or not
-    }
-
-    private void checkInputValidation(String fromCurrency, String toCurrency, Double amount) {
-
-        boolean isThereError = false;
+    public boolean checkInputValidation(String fromCurrency, String toCurrency, Double amount) {
 
         if (fromCurrency == null || fromCurrency.isEmpty()) {
             throw new IllegalArgumentException("fromCurrency is null or empty");
-
         }
 
         if (toCurrency == null || toCurrency.isEmpty()) {
@@ -67,6 +65,8 @@ public class CurrencyConverterService {
         if (toCurrency.matches(".*\\d.*")) {
             throw new IllegalArgumentException("toCurrency contains digit");
         }
+
+        return true;
 
     }
 

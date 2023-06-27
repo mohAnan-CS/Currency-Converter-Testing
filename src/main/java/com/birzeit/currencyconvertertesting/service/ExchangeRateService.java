@@ -31,46 +31,71 @@ public class ExchangeRateService {
 
     public double getExchangeRate(String fromCurrency, String toCurrency ) throws IOException {
 
-        String url = BASE_URL + "/pair/" + fromCurrency.trim() + "/" + toCurrency.trim();
+        //Check fromCurrency is Null
+        if (fromCurrency == null) {
+            throw new IllegalArgumentException("fromCurrency is null or empty");
+        }
 
-        HttpURLConnection connection = null;
-        BufferedReader reader = null;
+        else if (fromCurrency.isEmpty()) {
+            throw new IllegalArgumentException("fromCurrency is null or empty");
+        }
 
-        try {
+        //Check toCurrency is Null
+        else if (toCurrency == null) {
+            throw new IllegalArgumentException("toCurrency is null or empty");
+        }
 
-            URL apiURL = new URL(url);
-            connection = (HttpURLConnection) apiURL.openConnection();
-            connection.setRequestMethod("GET");
-            int responseCode = connection.getResponseCode();
+        else if (toCurrency.isEmpty()) {
+            throw new IllegalArgumentException("toCurrency is null or empty");
+        }
 
-            if (responseCode == HttpURLConnection.HTTP_OK) {
+        else {
 
-                reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                String response = reader.readLine();
-
-                JSONObject json = new JSONObject(response);
-
-                return json.getDouble("conversion_rate");
-
-            } else {
-
-                throw new IOException("Request failed with response code: " + responseCode);
-
+            if (fromCurrency.trim().equals(toCurrency)) {
+                return 1.0;
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            String url = BASE_URL + "/pair/" + fromCurrency.trim() + "/" + toCurrency.trim();
+
+            HttpURLConnection connection = null;
+            BufferedReader reader = null;
+
+            try {
+
+                URL apiURL = new URL(url);
+                connection = (HttpURLConnection) apiURL.openConnection();
+                connection.setRequestMethod("GET");
+                int responseCode = connection.getResponseCode();
+
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+
+                    reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    String response = reader.readLine();
+
+                    JSONObject json = new JSONObject(response);
+
+                    return json.getDouble("conversion_rate");
+
+                } else {
+
+                    throw new IOException("Request failed with response code: " + responseCode);
+
                 }
-            }
 
-            if (connection != null) {
-                connection.disconnect();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (reader != null) {
+                    try {
+                        reader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (connection != null) {
+                    connection.disconnect();
+                }
             }
         }
         return 0.0;
