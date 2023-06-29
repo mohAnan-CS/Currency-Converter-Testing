@@ -49,6 +49,11 @@ class ExchangeRateServiceTest {
     }
 
     @Test
+    void testMohammad(){
+        System.out.println("Mohammad");
+    }
+
+    @Test
     void testToCurrencyEmpty() {
 
         assertThrows(IllegalArgumentException.class, () -> {

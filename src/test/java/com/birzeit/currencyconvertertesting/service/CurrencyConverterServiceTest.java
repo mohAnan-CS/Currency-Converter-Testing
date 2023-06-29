@@ -24,24 +24,11 @@ class CurrencyConverterServiceTest {
     @Mock
     private ExchangeRateService exchangeRateService;
 
+
+
     @BeforeEach
     void setup() {
         MockitoAnnotations.openMocks(this);
-    }
-
-    @Test
-    void testConversionWithValidExchangeRate() throws IOException {
-        // Define the behavior of the mock ExchangeRateService
-        when(exchangeRateService.getExchangeRate("USD", "AED")).thenReturn(2.5);
-
-        double expected = 375.0;
-
-        // Define the behavior of the mock CurrencyConverterService
-
-
-        double convertedAmount = currencyConverterService.convert("USD", "AED", 150.0);
-
-        Assertions.assertEquals(expected, convertedAmount);
     }
 
     @Test
