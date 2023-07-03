@@ -69,11 +69,11 @@ The front-end code for the Currency Converter project is available in a separate
 
 #### Here is the HTML report :
 
-![html junit report1](images/my-image.png)
+![html junit report1](images/report1.png)
 
-![html junit report2](images/my-image.png)
+![html junit report2](images/report2.png)
 
-![html junit report3](images/my-image.png)
+![html junit report3](images/report3.png)
 
 ### Load Testing with Postman
 
