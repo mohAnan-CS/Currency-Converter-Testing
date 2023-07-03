@@ -8,25 +8,25 @@ The front-end code for the Currency Converter project is available in a separate
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/your-username/currency-converter-backend.git`
-2. Navigate to the project directory: `cd currency-converter-backend`
-3. Install the required dependencies using Maven: `mvn install`
+1. Clone this repository: `git clone https://github.com/your-username/currency-converter-backend.git` .
+2. Navigate to the project directory: `cd currency-converter-backend` .
+3. Install the required dependencies using Maven: `mvn install` .
 
 ## Usage
 
-1. Start the Spring Boot application: `mvn spring-boot:run`
+1. Start the Spring Boot application: `mvn spring-boot:run` .
 2. The backend server will be running at `http://localhost:8080`.
 
 ## Testing
 
 ### Unit Testing with JUnit and Mockito
 
-**1.** Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service.
+**1.** Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service`.
 **2.** To generate JUnit HTML reports for the backend unit tests, please follow these steps:-
    
    **2.1** Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
-         
+         ```xml
          </build>
          
          <reporting>
@@ -48,6 +48,7 @@ The front-end code for the Currency Converter project is available in a separate
                </plugin>
                ...
            </plugins>
+           ```
 
    **2.2** Run the following commands to execute the unit test :
    
@@ -112,11 +113,30 @@ By performing loading testing using Postman, you can assess the website's perfor
 
 ![html junit report1](images/test-loading-postman.png)
 
+## Testing
 
-## Contributing
+### Selenium Testing with Selenium IDE and WebDriver
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+To perform automated testing on the website using Selenium IDE and WebDriver, please follow these steps:
 
-## License
+1. Selenium IDE:
+   - Install Selenium IDE browser extension for your preferred browser (e.g., Chrome, Firefox).
+   - Open Selenium IDE and create a new test case.
+   - Use the IDE's recording feature to interact with the website and capture test steps.
+   - Enhance the test case by adding assertions, validations, and other necessary actions.
+   - Run the test case to verify the website's functionality.
+   - Refine and enhance the test case as needed to cover different scenarios.
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+2. Selenium WebDriver:
+   - Set up a Selenium WebDriver project using your preferred programming language (e.g., Java, Python).
+   - Install the necessary WebDriver bindings and dependencies.
+   - Write test scripts using WebDriver's API to automate interactions with the website.
+   - Utilize WebDriver's functions to find elements, perform actions, and make assertions.
+   - Execute the test scripts to validate the behavior of the website.
+   - Use frameworks like JUnit to organize and manage your test suite.
+
+By combining Selenium IDE and WebDriver, you can create comprehensive automated tests to ensure the functionality and stability of your website.
+
+You can find all selenuim IDE file in `testingfiles` . 
+You can file all selenuim web driver in `src/test/java/com/birzeit/currencyconvertertesting/selenium`.
+   
