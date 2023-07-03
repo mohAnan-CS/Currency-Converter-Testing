@@ -137,8 +137,6 @@ To perform automated testing on the website using Selenium IDE and WebDriver, pl
    - Execute the test scripts to validate the behavior of the website.
    - Use frameworks like JUnit to organize and manage your test suite.
 
-By combining Selenium IDE and WebDriver, you can create comprehensive automated tests to ensure the functionality and stability of your website.
-
 You can find all selenuim IDE file in `testingfiles`. 
 
 You can file all selenuim web driver in `src/test/java/com/birzeit/currencyconvertertesting/selenium`.
