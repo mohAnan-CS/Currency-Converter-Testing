@@ -67,6 +67,24 @@ The front-end code for the Currency Converter project is available in a separate
 
 **3.** The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
 
+#### *Note: Java JDK 17 and Maven Configuration*
+
+To generate HTML reports using this library, please ensure the following:
+
+**1.** Java JDK 17: Make sure you have Java JDK version 17 installed on your system. The HTML report generation feature relies on Java 17-specific features. You can check your Java version by running the following command in your terminal or command prompt:
+
+   ```bash
+   java -version
+   ```
+
+**2.** Maven Configuration: Ensure that your Maven installation is using Java JDK 17. To verify this, run the following command in your terminal or command prompt:
+
+   ```bash
+   mvn -version
+   ```
+
+![mvn version](images/mvn-version.png)
+
 #### Here is the HTML report :
 
 ![html junit report1](images/report1.png)
