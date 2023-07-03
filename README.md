@@ -21,10 +21,42 @@ The front-end code for the Currency Converter project is available in a separate
 
 ### Unit Testing with JUnit and Mockito
 
-1. Write your unit test cases using the JUnit and Mockito frameworks.
-2. Run the tests: `mvn test`
-3. The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
-4. To add images to the HTML reports:
+1. Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service.
+2. To generate JUnit HTML reports for the backend unit tests, please follow these steps:
+   2.1 Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
+   
+      ```xml
+      ...
+      </build>
+      
+      <reporting>
+         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+      </reporting>
+      
+      ```
+      ```xml
+      <plugins>
+            ...
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            ...
+        </plugins>
+      ```
+      
+   2.2
+   2.3
+   2.4
+4. The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
+5. To add images to the HTML reports:
    - Place your images in a directory, e.g., `src/test/resources/images`.
    - In your test code, provide the relative path to the image in the test description or assertion message.
    - After running the tests, copy the images to the `target/site` directory.
