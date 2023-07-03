@@ -89,15 +89,29 @@ To generate HTML reports using this library, please ensure the following:
 
 ![html junit report3](images/report3.png)
 
-### Load Testing with Postman
 
-1. Use Postman to perform load testing on the backend API.
-2. Create Postman collections with the required test scenarios.
-3. Execute the collections with a varying number of concurrent requests to simulate load.
-4. Generate the test report using Postman's built-in reporting feature.
-5. To add images to the report:
-   - Capture screenshots during the load testing scenarios.
-   - Include the screenshots in the report by referencing them in the report description or using the appropriate image embedding feature.
+### Loading Testing with Postman
+
+To perform loading testing on the website using Postman, please follow these steps:
+
+1. Make sure you have Postman installed on your local machine. If you don't have it installed, you can download it from the [Postman website](https://www.postman.com/downloads/).
+
+2. Open Postman and create a new request to test the website's loading.
+
+3. Set the request method, URL, headers, and any necessary request parameters or body according to your website's API or endpoints.
+
+4. Set up the desired load testing scenarios, such as the number of concurrent users or the number of requests per second, depending on the load testing requirements.
+
+5. Run the load test and observe the website's performance, response times, and any errors or issues encountered during the test.
+
+6. Optionally, you can generate a report using the built-in reporting feature of Postman to capture and share the load test results. You may refer to the Postman documentation for more information on generating reports.
+
+By performing loading testing using Postman, you can assess the website's performance and ensure it can handle the expected load and traffic effectively.
+
+#### Here is Dashboard for load testing using postman :
+
+![html junit report1](images/test-loading-postman.png)
+
 
 ## Contributing
 
