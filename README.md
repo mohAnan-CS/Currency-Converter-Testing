@@ -90,6 +90,7 @@ To generate HTML reports using this library, please ensure the following:
 
 ![html junit report3](images/report3.png)
 
+---
 
 ### - Loading Testing with Postman
 
@@ -113,6 +114,7 @@ By performing loading testing using Postman, you can assess the website's perfor
 
 ![html junit report1](images/test-loading-postman.png)
 
+---
 
 ### - Selenium Testing with Selenium IDE and WebDriver
 
