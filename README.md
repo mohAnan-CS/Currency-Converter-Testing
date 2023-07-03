@@ -19,7 +19,7 @@ The front-end code for the Currency Converter project is available in a separate
 
 ## Testing
 
-### Unit Testing with JUnit and Mockito
+###- Unit Testing with JUnit and Mockito
 
 **1.** Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service`.
 **2.** To generate JUnit HTML reports for the backend unit tests, please follow these steps:-
@@ -91,7 +91,7 @@ To generate HTML reports using this library, please ensure the following:
 ![html junit report3](images/report3.png)
 
 
-### Loading Testing with Postman
+###- Loading Testing with Postman
 
 To perform loading testing on the website using Postman, please follow these steps:
 
@@ -113,9 +113,8 @@ By performing loading testing using Postman, you can assess the website's perfor
 
 ![html junit report1](images/test-loading-postman.png)
 
-## Testing
 
-### Selenium Testing with Selenium IDE and WebDriver
+###- Selenium Testing with Selenium IDE and WebDriver
 
 To perform automated testing on the website using Selenium IDE and WebDriver, please follow these steps:
 
