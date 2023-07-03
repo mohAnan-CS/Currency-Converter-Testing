@@ -22,7 +22,8 @@ The front-end code for the Currency Converter project is available in a separate
 ### Unit Testing with JUnit and Mockito
 
 1. Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service.
-2. To generate JUnit HTML reports for the backend unit tests, please follow these steps:
+2. To generate JUnit HTML reports for the backend unit tests, please follow these steps:-
+   
    2.1 Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
       ```xml
@@ -55,6 +56,7 @@ The front-end code for the Currency Converter project is available in a separate
    2.2
    2.3
    2.4
+   
 4. The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
 5. To add images to the HTML reports:
    - Place your images in a directory, e.g., `src/test/resources/images`.
