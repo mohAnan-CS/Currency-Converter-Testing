@@ -8,9 +8,10 @@ The front-end code for the Currency Converter project is available in a separate
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/your-username/currency-converter-backend.git` .
-2. Navigate to the project directory: `cd currency-converter-backend` .
-3. Install the required dependencies using Maven: `mvn install` .
+1. Clone this repository: `git clone https://github.com/your-username/currency-converter-backend.git`.
+2. Navigate to the project directory: `cd currency-converter-backend`.
+3. Install the required dependencies using Maven: `mvn install`.
+
 
 ## Usage
 
