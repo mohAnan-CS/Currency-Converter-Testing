@@ -27,28 +27,29 @@ The front-end code for the Currency Converter project is available in a separate
    **2.1** Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
       ```xml
-      ...
-      </build>
-      
-      <reporting>
+         ...
+         </build>
+         
+         <reporting>
+            <plugins>
+               <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-surefire-report-plugin</artifactId>
+                   <version>3.1.2</version>
+               </plugin>
+           </plugins>
+         </reporting>
+         ...
          <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-        </plugins>
-      </reporting>
-      ...
-      <plugins>
-            ...
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-            ...
-        </plugins>
+               ...
+               <plugin>
+                   <groupId>org.apache.maven.plugins</groupId>
+                   <artifactId>maven-surefire-report-plugin</artifactId>
+                   <version>3.1.2</version>
+               </plugin>
+               ...
+           </plugins>
+      ```
 
       
    **2.2** Run the following commands to execute the unit test :
