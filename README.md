@@ -41,6 +41,7 @@ The front-end code for the Currency Converter project is available in a separate
       </reporting>
       
       ```
+      
       ```xml
       <plugins>
             ...
