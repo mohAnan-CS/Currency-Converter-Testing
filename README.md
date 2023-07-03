@@ -26,7 +26,7 @@ The front-end code for the Currency Converter project is available in a separate
    
    **2.1** Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
-      ```xml
+      ```XML
       ...
       </build>
       
