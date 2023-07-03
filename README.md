@@ -21,10 +21,10 @@ The front-end code for the Currency Converter project is available in a separate
 
 ### Unit Testing with JUnit and Mockito
 
-1. Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service.
-2. To generate JUnit HTML reports for the backend unit tests, please follow these steps:-
+**1.** Unit test cases using the JUnit and Mockito frameworks in `src/test/java/com/birzeit/currencyconvertertesting/service.
+**2.** To generate JUnit HTML reports for the backend unit tests, please follow these steps:-
    
-   2.1 Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
+   **2.1** Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
       ```xml
       ...
@@ -53,16 +53,27 @@ The front-end code for the Currency Converter project is available in a separate
         </plugins>
       ```
       
-   2.2
-   2.3
-   2.4
+   **2.2** Run the following commands to execute the unit test :
    
-4. The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
-5. To add images to the HTML reports:
-   - Place your images in a directory, e.g., `src/test/resources/images`.
-   - In your test code, provide the relative path to the image in the test description or assertion message.
-   - After running the tests, copy the images to the `target/site` directory.
-   - In the HTML reports, reference the images using the appropriate `<img>` tag and the relative path.
+      ```bash
+         mvn clean test surefire-report:report 
+      ```
+      
+   **2.3** After the command complete then Run the following commands to generate HTML report :
+   
+      ```bash
+         mvn surefire-report:report 
+      ```
+
+**3.** The Maven Surefire Report Plugin will generate JUnit HTML reports in the `target/site` directory.
+
+#### Here is the HTML report :
+
+![html junit report1](images/my-image.png)
+
+![html junit report2](images/my-image.png)
+
+![html junit report3](images/my-image.png)
 
 ### Load Testing with Postman
 
