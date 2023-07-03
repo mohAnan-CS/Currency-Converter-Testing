@@ -27,7 +27,7 @@ import org.json.JSONObject;  // For JSON-java library‏
 @Service
 public class ExchangeRateService {
 
-    private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/9dc6c9d4fb8fe304a72e221b";
+    private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/26e3b2de85345b498cde5237";
 
     public double getExchangeRate(String fromCurrency, String toCurrency ) throws IOException {
 
