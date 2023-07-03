@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "25e99fa8-c341-4cb9-86f4-ed025fc7213c",
+		"name": "Currency Convertes APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27329383"
+	},
+	"item": [
+		{
+			"name": "Send Currency Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"currencyCode\": \"USD\",\r\n  \"currencyName\": \"United States Dollar\",\r\n  \"country\": \"United States\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Currencies",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Converter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fromCurrency\": \"USD\",\r\n  \"toCurrency\": \"EUR\",\r\n  \"amount\": 100.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/converter/convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"converter",
+						"convert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
