@@ -26,8 +26,7 @@ The front-end code for the Currency Converter project is available in a separate
    
    **2.1** Make sure you have the Maven Surefire Report Plugin configured in your project's `pom.xml` file.
    
-      ```
-         ...
+         
          </build>
          
          <reporting>
@@ -39,7 +38,7 @@ The front-end code for the Currency Converter project is available in a separate
                </plugin>
            </plugins>
          </reporting>
-         ...
+      
          <plugins>
                ...
                <plugin>
@@ -49,9 +48,7 @@ The front-end code for the Currency Converter project is available in a separate
                </plugin>
                ...
            </plugins>
-      ```
 
-      
    **2.2** Run the following commands to execute the unit test :
    
       ```bash
