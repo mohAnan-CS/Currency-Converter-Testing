@@ -128,7 +128,7 @@ To perform automated testing on the website using Selenium IDE and WebDriver, pl
    - Refine and enhance the test case as needed to cover different scenarios.
 
 2. Selenium WebDriver:
-   - Set up a Selenium WebDriver project using your preferred programming language (e.g., Java, Python).
+   - Set up a Selenium WebDriver project using your preferred programming language (e.g., Java, Python) in this project i am using java.
    - Install the necessary WebDriver bindings and dependencies.
    - Write test scripts using WebDriver's API to automate interactions with the website.
    - Utilize WebDriver's functions to find elements, perform actions, and make assertions.
@@ -137,6 +137,7 @@ To perform automated testing on the website using Selenium IDE and WebDriver, pl
 
 By combining Selenium IDE and WebDriver, you can create comprehensive automated tests to ensure the functionality and stability of your website.
 
-You can find all selenuim IDE file in `testingfiles` . 
+You can find all selenuim IDE file in `testingfiles`. 
+
 You can file all selenuim web driver in `src/test/java/com/birzeit/currencyconvertertesting/selenium`.
    
